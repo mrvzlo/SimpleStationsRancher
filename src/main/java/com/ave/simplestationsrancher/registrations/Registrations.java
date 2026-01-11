@@ -3,8 +3,8 @@ package com.ave.simplestationsrancher.registrations;
 import com.ave.simplestationscore.registrations.RegistrationManager;
 import com.ave.simplestationscore.registrations.Station;
 import com.ave.simplestationsrancher.SimpleStationsRancher;
-import com.ave.simplestationsrancher.blockentity.BarnBlock;
-import com.ave.simplestationsrancher.blockentity.BarnEntity;
+import com.ave.simplestationsrancher.blockentity.BigBarnBlock;
+import com.ave.simplestationsrancher.blockentity.BigBarnEntity;
 import com.ave.simplestationsrancher.blockentity.modules.BaseModuleBlock;
 import com.ave.simplestationsrancher.blockentity.modules.BaseModuleEntity;
 import com.ave.simplestationsrancher.blockentity.modules.FishingModuleBlock;
@@ -17,12 +17,18 @@ import com.ave.simplestationsrancher.blockentity.modules.SlaughteringModuleBlock
 import com.ave.simplestationsrancher.blockentity.modules.SlaughteringModuleEntity;
 import com.ave.simplestationsrancher.blockentity.modules.TanningModuleBlock;
 import com.ave.simplestationsrancher.blockentity.modules.TanningModuleEntity;
+import com.ave.simplestationsrancher.screen.BarnMenu;
+
+import net.minecraft.world.inventory.MenuType;
+import net.minecraft.world.item.Item;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredItem;
 
 public class Registrations {
         public static final RegistrationManager MANAGER = new RegistrationManager(SimpleStationsRancher.MODID);
 
-        public static final Station<BarnEntity, BarnBlock> BARN = MANAGER.registerStation("barn",
-                        (p) -> new BarnBlock(p), BarnEntity::new);
+        public static final Station<BigBarnEntity, BigBarnBlock> BARN = MANAGER.registerStation("barn",
+                        (p) -> new BigBarnBlock(p), BigBarnEntity::new);
 
         public static final Station<BaseModuleEntity, BaseModuleBlock> EMPTY_MODULE = MANAGER.registerEmptyStation(
                         "module_empty", (p) -> new BaseModuleBlock(p), BaseModuleEntity::new);
@@ -38,4 +44,16 @@ public class Registrations {
         public static final Station<ShearingModuleEntity, ShearingModuleBlock> SHEARING_MODULE = MANAGER
                         .registerStation("module_shearing", (p) -> new ShearingModuleBlock(p),
                                         ShearingModuleEntity::new);
+
+        public static final DeferredItem<Item> COW_LURE = MANAGER.registerItem("lure_cow");
+        public static final DeferredItem<Item> SHEEP_LURE = MANAGER.registerItem("lure_sheep");
+        public static final DeferredItem<Item> PIG_LURE = MANAGER.registerItem("lure_pig");
+        public static final DeferredItem<Item> CHICKEN_LURE = MANAGER.registerItem("lure_chicken");
+        public static final DeferredItem<Item> FISH_LURE = MANAGER.registerItem("lure_fish");
+        public static final DeferredItem<Item> RABBIT_LURE = MANAGER.registerItem("lure_rabbit");
+        public static final DeferredItem<Item> SPIDER_LURE = MANAGER.registerItem("lure_spider");
+        public static final DeferredItem<Item> BEE_LURE = MANAGER.registerItem("lure_bee");
+
+        public static final DeferredHolder<MenuType<?>, MenuType<BarnMenu>> BARN_MENU = MANAGER
+                        .registerMenuType("barn_menu", BarnMenu::new);
 }

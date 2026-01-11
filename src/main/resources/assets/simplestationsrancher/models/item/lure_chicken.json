@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "simplestationsrancher:item/lure_chicken"
+  },
+  "render_type": "cutout"
+}

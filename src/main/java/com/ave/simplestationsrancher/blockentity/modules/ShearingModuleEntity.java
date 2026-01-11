@@ -1,5 +1,6 @@
 package com.ave.simplestationsrancher.blockentity.modules;
 
+import com.ave.simplestationsrancher.enums.ModuleType;
 import com.ave.simplestationsrancher.registrations.Registrations;
 
 import net.minecraft.core.BlockPos;

@@ -1,4 +1,4 @@
-package com.ave.simplestationsrancher.blockentity.modules;
+package com.ave.simplestationsrancher.enums;
 
 import com.ave.simplestationscore.registrations.Station;
 import com.ave.simplestationsrancher.registrations.Registrations;

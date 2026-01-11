@@ -1,7 +1,9 @@
 package com.ave.simplestationsrancher;
 
 import com.ave.simplestationscore.registrations.CoreRegistrations;
+import com.ave.simplestationsrancher.registrations.Registrations;
 import com.ave.simplestationsrancher.renderer.BarnRenderer;
+import com.ave.simplestationsrancher.screen.BarnScreen;
 
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -31,6 +33,7 @@ public class SimpleStationsRancherClient {
 
     @SubscribeEvent
     public static void registerScreens(RegisterMenuScreensEvent event) {
+        event.register(Registrations.BARN_MENU.get(), BarnScreen::new);
     }
 
     @SubscribeEvent

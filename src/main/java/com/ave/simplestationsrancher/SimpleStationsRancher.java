@@ -33,5 +33,13 @@ public class SimpleStationsRancher {
                 event.accept(Registrations.SLAUGHTERING_MODULE.getItem());
                 event.accept(Registrations.TANNING_MODULE.getItem());
                 event.accept(Registrations.HARVEST_MODULE.getItem());
+                event.accept(Registrations.BEE_LURE.get());
+                event.accept(Registrations.COW_LURE.get());
+                event.accept(Registrations.PIG_LURE.get());
+                event.accept(Registrations.CHICKEN_LURE.get());
+                event.accept(Registrations.SHEEP_LURE.get());
+                event.accept(Registrations.SPIDER_LURE.get());
+                event.accept(Registrations.RABBIT_LURE.get());
+                event.accept(Registrations.FISH_LURE.get());
         }
 }
