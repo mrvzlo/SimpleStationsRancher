@@ -1,0 +1,11 @@
+{
+  "values": [
+    "simplestationsrancher:barn",
+    "simplestationsrancher:module_empty",
+    "simplestationsrancher:module_shearing",
+    "simplestationsrancher:module_slaughtering",
+    "simplestationsrancher:module_tanning",
+    "simplestationsrancher:module_harvest",
+    "simplestationsrancher:module_fishing"
+  ]
+}

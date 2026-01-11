@@ -20,9 +20,12 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(Registrations.FARMER.getBlock())
-                .add(Registrations.DARK_FARMER.getBlock())
-                .add(Registrations.TREE_FARMER.getBlock())
-                .add(Registrations.FORAGE_FARMER.getBlock());
+                .add(Registrations.BARN.getBlock())
+                .add(Registrations.EMPTY_MODULE.getBlock())
+                .add(Registrations.SHEARING_MODULE.getBlock())
+                .add(Registrations.SLAUGHTERING_MODULE.getBlock())
+                .add(Registrations.TANNING_MODULE.getBlock())
+                .add(Registrations.HARVEST_MODULE.getBlock())
+                .add(Registrations.FISHING_MODULE.getBlock());
     }
 }

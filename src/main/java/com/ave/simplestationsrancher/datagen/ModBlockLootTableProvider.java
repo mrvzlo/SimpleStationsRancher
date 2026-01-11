@@ -17,15 +17,11 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        dropSelf(Registrations.FARMER.getBlock());
-        dropSelf(Registrations.DARK_FARMER.getBlock());
-        dropSelf(Registrations.FORAGE_FARMER.getBlock());
-        dropSelf(Registrations.TREE_FARMER.getBlock());
+        dropSelf(Registrations.BARN.getBlock());
     }
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return List.of(Registrations.FARMER.getBlock(), Registrations.DARK_FARMER.getBlock(),
-                Registrations.FORAGE_FARMER.getBlock(), Registrations.TREE_FARMER.getBlock());
+        return List.of(Registrations.BARN.getBlock());
     }
 }

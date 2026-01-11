@@ -1,8 +1,6 @@
 package com.ave.simplestationsrancher.blockentity;
 
 import com.ave.simplestationscore.mainblock.BaseStationBlockEntity;
-import com.ave.simplestationscore.resources.FluidResource;
-import com.ave.simplestationscore.resources.StationResource;
 import com.ave.simplestationsrancher.Config;
 
 import net.minecraft.core.BlockPos;
@@ -15,7 +13,7 @@ public abstract class BaseRancherBlockEntity extends BaseStationBlockEntity {
     public static final int OUTPUT_COUNT = 4;
     public static final int MODULE_SLOT = OUTPUT_COUNT + OUTPUT_SLOT;
     public static final int MODULE_COUNT = 4;
-    public static final int FOOD_SLOT = MODULE_SLOT + MODULE_COUNT;
+    public static final int ANIMAL_SLOT = MODULE_SLOT + MODULE_COUNT;
 
     public BaseRancherBlockEntity(BlockEntityType entity, BlockPos pos, BlockState state) {
         super(entity, pos, state);

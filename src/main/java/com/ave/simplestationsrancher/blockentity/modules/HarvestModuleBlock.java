@@ -1,19 +1,16 @@
-package com.ave.simplestationsrancher.blockentity;
-
-import javax.annotation.Nullable;
+package com.ave.simplestationsrancher.blockentity.modules;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class BarnBlock extends BaseRancherBlock {
-    public BarnBlock(Properties props) {
+public class HarvestModuleBlock extends BaseModuleBlock {
+    public HarvestModuleBlock(Properties props) {
         super(props);
     }
 
-    @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new BarnEntity(pos, state);
+        return new HarvestModuleEntity(pos, state);
     }
 }

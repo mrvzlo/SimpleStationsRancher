@@ -1,0 +1,5 @@
+{
+  "parent": "simplestationsrancher:custom/module_empty",
+  "textures": { "4": "minecraft:block/deepslate_tiles" },
+  "render_type": "cutout"
+}

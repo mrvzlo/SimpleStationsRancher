@@ -1,0 +1,11 @@
+{
+  "parent": "simplestationsrancher:custom/barn",
+  "textures": {
+    "0": "minecraft:block/moss_block",
+    "1": "minecraft:block/red_shulker_box",
+    "2": "minecraft:block/hay_block_top",
+    "3": "minecraft:block/white_concrete",
+    "4": "minecraft:block/deepslate_tiles"
+  },
+  "render_type": "cutout"
+}

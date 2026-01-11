@@ -1,0 +1,9 @@
+{
+  "parent": "simplestationsrancher:custom/module",
+  "textures": {
+    "1": "minecraft:block/white_wool",
+    "4": "minecraft:block/deepslate_tiles",
+    "particle": "minecraft:block/deepslate_tiles"
+  },
+  "render_type": "cutout"
+}

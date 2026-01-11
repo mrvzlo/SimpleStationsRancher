@@ -1,11 +1,7 @@
 package com.ave.simplestationsrancher;
 
-import com.ave.simplestationscore.partblock.PartBlockEntity;
 import com.ave.simplestationscore.registrations.CoreRegistrations;
-import com.ave.simplestationscore.registrations.RegistrationManager;
-import com.ave.simplestationsrancher.blockentity.BarnEntity;
-import com.ave.simplestationsrancher.registrations.Registrations;
-import com.ave.simplestationsrancher.renderer.CropRenderer;
+import com.ave.simplestationsrancher.renderer.BarnRenderer;
 
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -43,6 +39,6 @@ public class SimpleStationsRancherClient {
 
     @SubscribeEvent // on the mod event bus only on the physical client
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerBlockEntityRenderer(CoreRegistrations.PART.getEntity(), CropRenderer::new);
+        event.registerBlockEntityRenderer(CoreRegistrations.PART.getEntity(), BarnRenderer::new);
     }
 }

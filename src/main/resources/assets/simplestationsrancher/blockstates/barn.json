@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "simplestationsrancher:block/barn" },
+    "facing=south": { "model": "simplestationsrancher:block/barn", "y": 180 },
+    "facing=east": { "model": "simplestationsrancher:block/barn", "y": 90 },
+    "facing=west": { "model": "simplestationsrancher:block/barn", "y": 270 }
+  }
+}
