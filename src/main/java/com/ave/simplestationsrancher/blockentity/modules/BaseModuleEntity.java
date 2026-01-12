@@ -21,6 +21,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class BaseModuleEntity extends BaseStationBlockEntity implements PartialEntity {
     private BlockPos controllerPos;
+    public static final int OUTPUT_SLOT = 0;
     private final Station<?, ?> station;
 
     public BaseModuleEntity(BlockPos pos, BlockState state) {
@@ -32,10 +33,15 @@ public class BaseModuleEntity extends BaseStationBlockEntity implements PartialE
         this.type = type.id;
         this.station = station;
 
-        inventory = new CommonItemHandler(2) {
+        inventory = new CommonItemHandler(1) {
             @Override
             protected void onContentsChanged(int slot) {
                 setChanged();
+            }
+
+            @Override
+            public boolean isItemValid(int slot, ItemStack stack) {
+                return false;
             }
         };
     }

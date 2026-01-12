@@ -20,33 +20,24 @@ public abstract class BaseRancherBlock extends BaseStationBlock {
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean moving) {
         if (level.isClientSide)
             return;
+        resetNeighboors(level, pos);
+    }
+
+    public static void resetNeighboors(Level level, BlockPos pos) {
         for (int dx = -1; dx <= 1; ++dx)
             for (int dz = -1; dz <= 1; ++dz) {
-                var p = pos.offset(dx, 0, dz);
-                if (p.equals(pos))
+                if (dx == 0 && dz == 0)
+                    continue;
+                var neighboor = pos.offset(dx, 0, dz);
+                if (level.getBlockEntity(neighboor) instanceof PartialEntity)
                     continue;
                 var isEdge = dx == 0 || dz == 0;
-                var block = (isEdge ? CoreRegistrations.PART : Registrations.EMPTY_MODULE).getBlock()
-                        .defaultBlockState();
-                level.setBlock(p, block, 3);
-                var be = level.getBlockEntity(p);
+                var block = (isEdge ? CoreRegistrations.PART : Registrations.EMPTY_MODULE)
+                        .getBlock().defaultBlockState();
+                level.setBlock(neighboor, block, 3);
+                var be = level.getBlockEntity(neighboor);
                 if (be instanceof PartialEntity partial)
                     partial.setControllerPos(pos);
             }
-    }
-
-    @Override
-    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-        if (level.isClientSide)
-            return;
-        for (int dx = -1; dx <= 1; ++dx)
-            for (int dz = -1; dz <= 1; ++dz) {
-                if (dx == 0 || dz == 0)
-                    continue;
-                var p = pos.offset(dx, 0, dz);
-                if (level.getBlockEntity(p) instanceof BaseModuleEntity partial)
-                    BaseModuleBlock.dropModule(level, partial);
-            }
-        super.onRemove(state, level, pos, newState, isMoving);
     }
 }

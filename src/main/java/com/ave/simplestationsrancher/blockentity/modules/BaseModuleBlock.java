@@ -1,6 +1,8 @@
 package com.ave.simplestationsrancher.blockentity.modules;
 
 import com.ave.simplestationscore.partblock.PartBlock;
+import com.ave.simplestationsrancher.blockentity.BaseRancherBlock;
+import com.ave.simplestationsrancher.blockentity.BaseRancherBlockEntity;
 import com.ave.simplestationsrancher.enums.ModuleType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
@@ -38,7 +40,7 @@ public class BaseModuleBlock extends PartBlock {
         if (!(be instanceof BaseModuleEntity module))
             return ItemInteractionResult.SUCCESS;
         if (module.type != ModuleType.EMPTY.id) {
-            player.openMenu(module);
+            player.openMenu(module, module.getBlockPos());
             return ItemInteractionResult.SUCCESS;
         }
         var type = ModuleType.fromItem(stack.getItem());
@@ -46,32 +48,20 @@ public class BaseModuleBlock extends PartBlock {
             return ItemInteractionResult.SUCCESS;
 
         replace(level, pos, type, module.getControllerPos());
-        stack.shrink(1);
+        if (!player.isCreative())
+            stack.shrink(1);
         level.playSound(null, pos, SoundEvents.METAL_PLACE, SoundSource.BLOCKS);
         return ItemInteractionResult.CONSUME;
     }
 
     @Override
     public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
-        return state;
-    }
-
-    @Override
-    public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, BlockEntity be,
-            ItemStack tool) {
-        if (!(be instanceof BaseModuleEntity module) || level.isClientSide)
-            return;
-
-        if (module.type != ModuleType.EMPTY.id) {
-            dropModule(level, module);
-            replace(level, pos, ModuleType.EMPTY, module.getControllerPos());
-            level.playSound(null, pos, SoundEvents.METAL_BREAK, SoundSource.BLOCKS);
-            return;
-        }
-
-        var controllerPos = module.getControllerPos();
-        if (controllerPos != null)
-            level.destroyBlock(controllerPos, !player.isCreative());
+        if (level.isClientSide)
+            return state;
+        var be = (BaseModuleEntity) level.getBlockEntity(pos);
+        if (be.type != ModuleType.EMPTY.id)
+            return state;
+        return super.playerWillDestroy(level, pos, state, player);
     }
 
     private static void replace(Level level, BlockPos pos, ModuleType type, BlockPos controllerPos) {
@@ -81,13 +71,25 @@ public class BaseModuleBlock extends PartBlock {
         newBlock.setControllerPos(controllerPos);
     }
 
-    public static void dropModule(Level level, BaseModuleEntity module) {
-        if (module.type == ModuleType.EMPTY.id)
+    @Override
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+        var be = (BaseModuleEntity) level.getBlockEntity(pos);
+        var controllerPos = be.getControllerPos();
+        var replace = (controllerPos != null && be.type != ModuleType.EMPTY.id);
+        super.onRemove(state, level, pos, newState, isMoving);
+        if (!replace)
             return;
+        dropModule(level, be, pos);
+        var controllerBe = level.getBlockEntity(controllerPos);
+        if (controllerBe instanceof BaseRancherBlockEntity)
+            BaseRancherBlock.resetNeighboors(level, controllerPos);
+    }
+
+    private static void dropModule(Level level, BaseModuleEntity module, BlockPos pos) {
+        level.playSound(null, pos, SoundEvents.METAL_BREAK, SoundSource.BLOCKS);
         var type = ModuleType.fromId(module.type);
         var item = type.station.getItem();
-        Containers.dropItemStack(level, module.getBlockPos().getX(), module.getBlockPos().getY(),
-                module.getBlockPos().getZ(), new ItemStack(item));
-        Containers.dropContents(level, module.getBlockPos(), module.inventory.getAsList());
+        Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(item));
+        Containers.dropContents(level, pos, module.inventory.getAsList());
     }
 }

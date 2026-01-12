@@ -2,10 +2,10 @@ package com.ave.simplestationsrancher.blockentity.handlers;
 
 import com.ave.simplestationscore.handlers.CommonItemHandler;
 import com.ave.simplestationsrancher.blockentity.BaseRancherBlockEntity;
+import com.ave.simplestationsrancher.datagen.ModTags;
 import com.ave.simplestationsrancher.registrations.Registrations;
 
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 
 public class BigBarnItemHandler extends CommonItemHandler {
 
@@ -19,7 +19,7 @@ public class BigBarnItemHandler extends CommonItemHandler {
             return stack.is(Registrations.COW_LURE) || stack.is(Registrations.SHEEP_LURE)
                     || stack.is(Registrations.PIG_LURE);
         if (slot == BaseRancherBlockEntity.FOOD_SLOT)
-            return stack.is(Items.WHEAT) || stack.is(Items.CARROT) || stack.is(Items.SHORT_GRASS);
+            return stack.is(ModTags.BIG_BARN_FOOD);
         return super.isItemValid(slot, stack);
     }
 
