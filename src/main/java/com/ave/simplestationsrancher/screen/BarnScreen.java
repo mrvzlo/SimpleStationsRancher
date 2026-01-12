@@ -39,7 +39,6 @@ public class BarnScreen extends BaseStationScreen {
             gfx.renderTooltip(font, Component.translatable("screen.simplestationsrancher.filter"), mouseX, mouseY);
         }
 
-        renderProgressTooltip(gfx, UIBlocks.PROGRESS_BAR, mouseX, mouseY, station);
         renderPowerTooltip(gfx, UIBlocks.POWER_BAR, mouseX, mouseY, station);
 
         var food = station.resources.get(BaseRancherBlockEntity.FOOD_SLOT);
@@ -63,7 +62,7 @@ public class BarnScreen extends BaseStationScreen {
         super.renderBg(graphics, tick, mx, my);
         if (!(menu.blockEntity instanceof BaseStationBlockEntity station))
             return;
-        renderProgressBar(graphics, station, UIBlocks.PROGRESS_BAR);
+
         renderPowerBar(graphics, station, UIBlocks.POWER_BAR, UIBlocks.POWER_SLOT);
 
         var food = station.resources.get(BaseRancherBlockEntity.FOOD_SLOT);

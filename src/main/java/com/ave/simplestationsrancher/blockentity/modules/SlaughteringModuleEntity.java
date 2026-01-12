@@ -8,7 +8,6 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class SlaughteringModuleEntity extends BaseModuleEntity {
     public SlaughteringModuleEntity(BlockPos pos, BlockState state) {
-        super(Registrations.SLAUGHTERING_MODULE.getEntity(), pos, state, ModuleType.SLAUGHTERING);
+        super(Registrations.SLAUGHTERING_MODULE, pos, state, ModuleType.SLAUGHTERING);
     }
-
 }

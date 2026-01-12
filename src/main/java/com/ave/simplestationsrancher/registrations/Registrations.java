@@ -18,6 +18,7 @@ import com.ave.simplestationsrancher.blockentity.modules.SlaughteringModuleEntit
 import com.ave.simplestationsrancher.blockentity.modules.TanningModuleBlock;
 import com.ave.simplestationsrancher.blockentity.modules.TanningModuleEntity;
 import com.ave.simplestationsrancher.screen.BarnMenu;
+import com.ave.simplestationsrancher.screen.ModuleMenu;
 
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.Item;
@@ -56,4 +57,6 @@ public class Registrations {
 
         public static final DeferredHolder<MenuType<?>, MenuType<BarnMenu>> BARN_MENU = MANAGER
                         .registerMenuType("barn_menu", BarnMenu::new);
+        public static final DeferredHolder<MenuType<?>, MenuType<ModuleMenu>> MODULE_MENU = MANAGER
+                        .registerMenuType("module_menu", ModuleMenu::new);
 }

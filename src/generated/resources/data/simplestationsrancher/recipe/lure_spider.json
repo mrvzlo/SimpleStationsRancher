@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:leather"
+    },
+    {
+      "item": "minecraft:rotten_flesh"
+    },
+    {
+      "tag": "minecraft:meat"
+    },
+    {
+      "tag": "minecraft:meat"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "simplestationsrancher:lure_spider"
+  }
+}

@@ -12,6 +12,7 @@ public class UIBlocks {
     public static final Square FILTER_BAR = new Square(80, 15, 16, 35);
     public static final Square FILTER_SLOT = new Square(80, 52, 16, 16);
 
-    public static final Square PROGRESS_BAR = new Square(80, 55, 16, 3);
+    public static final Square OUTPUT = new Square(80, 29, 16, 16);
+    public static final Square PROGRESS_BAR = new Square(80, 47, 16, 3);
 
 }

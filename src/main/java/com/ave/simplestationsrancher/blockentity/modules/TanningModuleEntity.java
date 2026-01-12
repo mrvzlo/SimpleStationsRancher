@@ -8,7 +8,6 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class TanningModuleEntity extends BaseModuleEntity {
     public TanningModuleEntity(BlockPos pos, BlockState state) {
-        super(Registrations.TANNING_MODULE.getEntity(), pos, state, ModuleType.TANNING);
+        super(Registrations.TANNING_MODULE, pos, state, ModuleType.TANNING);
     }
-
 }

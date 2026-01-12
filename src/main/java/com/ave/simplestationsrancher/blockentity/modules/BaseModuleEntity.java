@@ -3,31 +3,34 @@ package com.ave.simplestationsrancher.blockentity.modules;
 import com.ave.simplestationscore.handlers.CommonItemHandler;
 import com.ave.simplestationscore.mainblock.BaseStationBlockEntity;
 import com.ave.simplestationscore.partblock.PartialEntity;
+import com.ave.simplestationscore.registrations.Station;
 import com.ave.simplestationsrancher.Config;
 import com.ave.simplestationsrancher.enums.ModuleType;
 import com.ave.simplestationsrancher.registrations.Registrations;
+import com.ave.simplestationsrancher.screen.ModuleMenu;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class BaseModuleEntity extends BaseStationBlockEntity implements PartialEntity {
     private BlockPos controllerPos;
+    private final Station<?, ?> station;
 
     public BaseModuleEntity(BlockPos pos, BlockState state) {
-        this(Registrations.EMPTY_MODULE.getEntity(), pos, state, ModuleType.EMPTY);
+        this(Registrations.EMPTY_MODULE, pos, state, ModuleType.EMPTY);
     }
 
-    public BaseModuleEntity(BlockEntityType bet, BlockPos pos, BlockState state, ModuleType type) {
-        super(bet, pos, state);
+    public BaseModuleEntity(Station<?, ?> station, BlockPos pos, BlockState state, ModuleType type) {
+        super(station.getEntity(), pos, state);
         this.type = type.id;
+        this.station = station;
 
         inventory = new CommonItemHandler(2) {
             @Override
@@ -47,9 +50,8 @@ public class BaseModuleEntity extends BaseStationBlockEntity implements PartialE
     }
 
     @Override
-    public AbstractContainerMenu createMenu(int arg0, Inventory arg1, Player arg2) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'createMenu'");
+    public ModuleMenu createMenu(int containerId, Inventory inventory, Player player) {
+        return new ModuleMenu(containerId, inventory, this);
     }
 
     @Override
@@ -72,6 +74,10 @@ public class BaseModuleEntity extends BaseStationBlockEntity implements PartialE
     @Override
     public SoundEvent getWorkSound() {
         return null;
+    }
+
+    public Component getTitle() {
+        return this.station.getBlock().getName();
     }
 
     @Override

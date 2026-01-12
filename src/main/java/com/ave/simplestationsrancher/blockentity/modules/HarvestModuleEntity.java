@@ -8,7 +8,6 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class HarvestModuleEntity extends BaseModuleEntity {
     public HarvestModuleEntity(BlockPos pos, BlockState state) {
-        super(Registrations.HARVEST_MODULE.getEntity(), pos, state, ModuleType.HARVEST);
+        super(Registrations.HARVEST_MODULE, pos, state, ModuleType.HARVEST);
     }
-
 }

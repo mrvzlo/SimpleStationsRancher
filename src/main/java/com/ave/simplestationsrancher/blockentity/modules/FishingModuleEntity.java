@@ -8,7 +8,6 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class FishingModuleEntity extends BaseModuleEntity {
     public FishingModuleEntity(BlockPos pos, BlockState state) {
-        super(Registrations.FISHING_MODULE.getEntity(), pos, state, ModuleType.FISHING);
+        super(Registrations.FISHING_MODULE, pos, state, ModuleType.FISHING);
     }
-
 }

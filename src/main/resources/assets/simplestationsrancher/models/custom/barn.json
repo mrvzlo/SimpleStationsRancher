@@ -7,7 +7,7 @@
     "2": "simplestationsrancher:block/hay",
     "3": "simplestationsrancher:block/white_concrete",
     "4": "simplestationsrancher:block/gray_concrete",
-    "particle": "minecraft:block/deepslate_tiles"
+    "particle": "minecraft:block/gray_concrete"
   },
   "elements": [
     {

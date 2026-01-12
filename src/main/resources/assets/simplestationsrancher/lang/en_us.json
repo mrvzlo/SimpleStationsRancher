@@ -1,6 +1,24 @@
 {
+  "block.simplestationsrancher.barn": "Big barn",
+  "block.simplestationsrancher.module_tanning": "Tanning tower",
+  "block.simplestationsrancher.module_harvest": "Harvesting tower",
+  "block.simplestationsrancher.module_fishing": "Fishing tower",
+  "block.simplestationsrancher.module_slaughtering": "Slaughtering tower",
+  "block.simplestationsrancher.module_shearing": "Shearing tower",
+  "item.simplestationsrancher.lure_cow": "Cow lure",
+  "item.simplestationsrancher.lure_sheep": "Sheep lure",
+  "item.simplestationsrancher.lure_pig": "Pig lure",
+  "item.simplestationsrancher.lure_chicken": "Chicken lure",
+  "item.simplestationsrancher.lure_rabbit": "Rabbit lure",
+  "item.simplestationsrancher.lure_bee": "Bee lure",
+  "item.simplestationsrancher.lure_spider": "Spider lure",
+  "item.simplestationsrancher.lure_fish": "Fishing lure",
+
   "simplestationsrancher.configuration.title": "Configs",
   "simplestationsrancher.configuration.consume": "RF consume per tick",
 
-  "screen.simplestationsrancher.filter": "Plant seed to grow"
+  "screen.simplestationsrancher.rancho": "Ranching station",
+  "screen.simplestationsrancher.animal": "Animals",
+  "screen.simplestationsrancher.food": "Food amount",
+  "screen.simplestationsrancher.filter": "Place lure"
 }
