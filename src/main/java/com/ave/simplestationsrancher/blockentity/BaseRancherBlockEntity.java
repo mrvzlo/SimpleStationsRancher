@@ -5,6 +5,7 @@ import com.ave.simplestationscore.resources.EnergyResource;
 import com.ave.simplestationscore.resources.FluidItemResource;
 import com.ave.simplestationsrancher.Config;
 import com.ave.simplestationsrancher.screen.BarnMenu;
+import com.ave.simplestationscore.CoreConfig;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Inventory;
@@ -20,9 +21,9 @@ public abstract class BaseRancherBlockEntity extends BaseStationBlockEntity {
 
     public BaseRancherBlockEntity(BlockEntityType entity, BlockPos pos, BlockState state) {
         super(entity, pos, state);
-        resources.put(FUEL_SLOT, new EnergyResource(Config.POWER_MAX.get(), 64, Config.FUEL_PER_COAL.get()));
+        resources.put(FUEL_SLOT, new EnergyResource(CoreConfig.POWER_MAX.get(), 64, CoreConfig.POWER_PER_COAL.get()));
         resources.put(FOOD_SLOT, new FluidItemResource(Config.MAX_FOOD.getAsInt(), 1, 200, "food"));
-        resources.put(ANIMAL_SLOT, new FluidItemResource(Config.MAX_ANIMAL.get(), 1, 1, "animal"));
+        resources.put(ANIMAL_SLOT, new FluidItemResource(Config.MAX_ANIMAL.get(), 0, 0, "animal"));
     }
 
     public int getMaxProgress() {

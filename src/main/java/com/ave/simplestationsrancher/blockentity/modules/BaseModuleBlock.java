@@ -75,7 +75,7 @@ public class BaseModuleBlock extends PartBlock {
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
         var be = (BaseModuleEntity) level.getBlockEntity(pos);
         var controllerPos = be.getControllerPos();
-        var replace = (controllerPos != null && be.type != ModuleType.EMPTY.id);
+        var replace = controllerPos != null && be.type != ModuleType.EMPTY.id;
         super.onRemove(state, level, pos, newState, isMoving);
         if (!replace)
             return;
