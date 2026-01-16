@@ -3,8 +3,6 @@ package com.ave.simplestationsrancher.blockentity;
 import com.ave.simplestationscore.mainblock.BaseStationBlock;
 import com.ave.simplestationscore.partblock.PartialEntity;
 import com.ave.simplestationscore.registrations.CoreRegistrations;
-import com.ave.simplestationsrancher.blockentity.modules.BaseModuleBlock;
-import com.ave.simplestationsrancher.blockentity.modules.BaseModuleEntity;
 import com.ave.simplestationsrancher.registrations.Registrations;
 
 import net.minecraft.core.BlockPos;

@@ -1,0 +1,18 @@
+{
+  "type": "rancher",
+  "module": { "item": "simplestationrancher.module_slaughtering" },
+  "lure": { "item": "simplestationrancher.lure_chicken" },
+  "speed": 1,
+  "rolls": [
+    {
+      "output": "minecraft:chicken",
+      "count": 1,
+      "chance": 80
+    },
+    {
+      "output": "minecraft:bone",
+      "count": 1,
+      "chance": 20
+    }
+  ]
+}

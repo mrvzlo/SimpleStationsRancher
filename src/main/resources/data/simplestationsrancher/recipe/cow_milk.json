@@ -1,0 +1,13 @@
+{
+  "type": "rancher",
+  "module": { "item": "simplestationrancher.module_harvest" },
+  "lure": { "item": "simplestationrancher.lure_cow" },
+  "speed": 1,
+  "rolls": [
+    {
+      "output": "simplestationrancher:milk",
+      "count": 1,
+      "chance": 100
+    }
+  ]
+}

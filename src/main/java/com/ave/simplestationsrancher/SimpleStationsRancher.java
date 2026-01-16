@@ -3,6 +3,7 @@ package com.ave.simplestationsrancher;
 import org.slf4j.Logger;
 
 import com.ave.simplestationscore.registrations.CoreRegistrations;
+import com.ave.simplestationsrancher.recipes.ModRecipes;
 import com.ave.simplestationsrancher.registrations.Registrations;
 import com.mojang.logging.LogUtils;
 
@@ -20,6 +21,7 @@ public class SimpleStationsRancher {
         public SimpleStationsRancher(IEventBus modEventBus, ModContainer modContainer) {
                 modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
                 Registrations.MANAGER.register(modEventBus);
+                ModRecipes.register(modEventBus);
                 modEventBus.addListener(this::addCreative);
         }
 

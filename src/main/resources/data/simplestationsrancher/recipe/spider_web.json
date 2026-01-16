@@ -1,0 +1,13 @@
+{
+  "type": "rancher",
+  "module": { "item": "simplestationrancher.module_shearing" },
+  "lure": { "item": "simplestationrancher.lure_spider" },
+  "speed": 3,
+  "rolls": [
+    {
+      "output": "minecraft:string",
+      "count": 2,
+      "chance": 100
+    }
+  ]
+}

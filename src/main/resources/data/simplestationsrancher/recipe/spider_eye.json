@@ -1,0 +1,13 @@
+{
+  "type": "rancher",
+  "module": { "item": "simplestationrancher.module_slaughtering" },
+  "lure": { "item": "simplestationrancher.lure_spider" },
+  "speed": 1,
+  "rolls": [
+    {
+      "output": "minecraft:spider_eye",
+      "count": 1,
+      "chance": 100
+    }
+  ]
+}

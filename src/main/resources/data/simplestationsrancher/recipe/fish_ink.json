@@ -1,0 +1,18 @@
+{
+  "type": "rancher",
+  "module": { "item": "simplestationrancher.module_harvest" },
+  "lure": { "item": "simplestationrancher.lure_fish" },
+  "speed": 1,
+  "rolls": [
+    {
+      "output": "minecraft:ink_sac",
+      "count": 1,
+      "chance": 90
+    },
+    {
+      "output": "minecraft:glow_ink_sac",
+      "count": 1,
+      "chance": 10
+    }
+  ]
+}

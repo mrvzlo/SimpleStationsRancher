@@ -1,0 +1,13 @@
+{
+  "type": "rancher",
+  "module": { "item": "simplestationrancher.module_harvest" },
+  "lure": { "item": "simplestationrancher.lure_chicken" },
+  "speed": 1,
+  "rolls": [
+    {
+      "output": "minecraft:egg",
+      "count": 1,
+      "chance": 100
+    }
+  ]
+}

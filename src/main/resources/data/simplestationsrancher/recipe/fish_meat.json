@@ -1,0 +1,28 @@
+{
+  "type": "rancher",
+  "module": { "item": "simplestationrancher.module_slaughtering" },
+  "lure": { "item": "simplestationrancher.lure_fish" },
+  "speed": 1,
+  "rolls": [
+    {
+      "output": "minecraft:salmon",
+      "count": 1,
+      "chance": 40
+    },
+    {
+      "output": "minecraft:cod",
+      "count": 1,
+      "chance": 40
+    },
+    {
+      "output": "minecraft:tropical_fish",
+      "count": 1,
+      "chance": 10
+    },
+    {
+      "output": "minecraft:pufferfish",
+      "count": 1,
+      "chance": 10
+    }
+  ]
+}

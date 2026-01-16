@@ -1,0 +1,18 @@
+{
+  "type": "rancher",
+  "module": { "item": "simplestationrancher.module_shearing" },
+  "lure": { "item": "simplestationrancher.lure_chicken" },
+  "speed": 1,
+  "rolls": [
+    {
+      "output": "minecraft:feather",
+      "count": 1,
+      "chance": 80
+    },
+    {
+      "output": "minecraft:feather",
+      "count": 2,
+      "chance": 20
+    }
+  ]
+}

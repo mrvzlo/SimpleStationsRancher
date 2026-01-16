@@ -1,0 +1,18 @@
+{
+  "type": "rancher",
+  "module": { "item": "simplestationrancher.module_slaughtering" },
+  "lure": { "item": "simplestationrancher.lure_rabbit" },
+  "speed": 1,
+  "rolls": [
+    {
+      "output": "minecraft:rabbit",
+      "count": 1,
+      "chance": 95
+    },
+    {
+      "output": "minecraft:rabbit_foot",
+      "count": 1,
+      "chance": 5
+    }
+  ]
+}

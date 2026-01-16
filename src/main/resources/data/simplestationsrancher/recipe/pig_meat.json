@@ -1,0 +1,23 @@
+{
+  "type": "rancher",
+  "module": { "item": "simplestationrancher.module_slaughtering" },
+  "lure": { "item": "simplestationrancher.lure_pig" },
+  "speed": 1,
+  "rolls": [
+    {
+      "output": "minecraft:porkchop",
+      "count": 1,
+      "chance": 40
+    },
+    {
+      "output": "minecraft:porkchop",
+      "count": 2,
+      "chance": 40
+    },
+    {
+      "output": "minecraft:bone",
+      "count": 1,
+      "chance": 20
+    }
+  ]
+}
