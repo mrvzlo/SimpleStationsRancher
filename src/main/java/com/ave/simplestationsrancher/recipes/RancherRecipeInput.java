@@ -1,12 +1,13 @@
 package com.ave.simplestationsrancher.recipes;
 
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeInput;
 
-public record RancherRecipeInput(ItemStack module, ItemStack lure) implements RecipeInput {
+public record RancherRecipeInput(Item module, Item lure) implements RecipeInput {
     @Override
     public ItemStack getItem(int i) {
-        return i == 0 ? module : lure;
+        return new ItemStack(i == 0 ? module : lure);
     }
 
     @Override

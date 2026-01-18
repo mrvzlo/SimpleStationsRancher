@@ -19,7 +19,7 @@ public record RancherRecipe(ItemStack module, ItemStack lure, int speed, List<St
         if (level.isClientSide())
             return false;
 
-        return module().equals(input.module()) && lure().equals(input.lure());
+        return module().is(input.module()) && lure().is(input.lure());
     }
 
     @Override
@@ -29,12 +29,12 @@ public record RancherRecipe(ItemStack module, ItemStack lure, int speed, List<St
 
     @Override
     public RecipeSerializer<? extends Recipe<RancherRecipeInput>> getSerializer() {
-        return ModRecipes.SIFTER_SERIALIZER.get();
+        return ModRecipes.SERIALIZER.get();
     }
 
     @Override
     public RecipeType<? extends Recipe<RancherRecipeInput>> getType() {
-        return ModRecipes.SIFTER_TYPE.get();
+        return ModRecipes.TYPE.get();
     }
 
     @Override
@@ -47,11 +47,8 @@ public record RancherRecipe(ItemStack module, ItemStack lure, int speed, List<St
         return ItemStack.EMPTY;
     }
 
-    public ItemStack roll(Random random, boolean luck) {
+    public ItemStack roll(Random random) {
         int roll = random.nextInt(100);
-        if (luck)
-            roll += (99 - roll) / 3;
-
         int acc = 0;
         for (var r : rolls) {
             acc += r.chance();

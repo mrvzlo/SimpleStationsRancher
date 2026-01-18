@@ -1,7 +1,7 @@
 {
-  "type": "rancher",
-  "module": { "item": "simplestationrancher.module_harvest" },
-  "lure": { "item": "simplestationrancher.lure_chicken" },
+  "type": "simplestationsrancher:rancher",
+  "module": { "id": "simplestationsrancher:module_harvest" },
+  "lure": { "id": "simplestationsrancher:lure_chicken" },
   "speed": 1,
   "rolls": [
     {

@@ -1,5 +1,6 @@
 package com.ave.simplestationsrancher.blockentity.modules;
 
+import com.ave.simplestationscore.mainblock.BaseStationBlockEntity;
 import com.ave.simplestationscore.partblock.PartBlock;
 import com.ave.simplestationsrancher.blockentity.BaseRancherBlock;
 import com.ave.simplestationsrancher.blockentity.BaseRancherBlockEntity;
@@ -15,6 +16,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 
@@ -31,6 +34,11 @@ public class BaseModuleBlock extends PartBlock {
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         return false;
+    }
+
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state,
+            BlockEntityType<T> type) {
+        return (lvl, pos, st, be) -> ((BaseStationBlockEntity) be).tick();
     }
 
     @Override

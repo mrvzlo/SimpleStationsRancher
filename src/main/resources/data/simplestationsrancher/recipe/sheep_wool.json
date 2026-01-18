@@ -1,7 +1,7 @@
 {
-  "type": "rancher",
-  "module": { "item": "simplestationrancher.module_shearing" },
-  "lure": { "item": "simplestationrancher.lure_sheep" },
+  "type": "simplestationsrancher:rancher",
+  "module": { "id": "simplestationsrancher:module_shearing" },
+  "lure": { "id": "simplestationsrancher:lure_sheep" },
   "speed": 1,
   "rolls": [
     {

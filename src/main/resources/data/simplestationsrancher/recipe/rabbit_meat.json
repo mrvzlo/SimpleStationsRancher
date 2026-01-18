@@ -1,7 +1,7 @@
 {
-  "type": "rancher",
-  "module": { "item": "simplestationrancher.module_slaughtering" },
-  "lure": { "item": "simplestationrancher.lure_rabbit" },
+  "type": "simplestationsrancher:rancher",
+  "module": { "id": "simplestationsrancher:module_slaughtering" },
+  "lure": { "id": "simplestationsrancher:lure_rabbit" },
   "speed": 1,
   "rolls": [
     {

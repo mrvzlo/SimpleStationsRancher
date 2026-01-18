@@ -1,7 +1,7 @@
 {
-  "type": "rancher",
-  "module": { "item": "simplestationrancher.module_tanning" },
-  "lure": { "item": "simplestationrancher.lure_cow" },
+  "type": "simplestationsrancher:rancher",
+  "module": { "id": "simplestationsrancher:module_tanning" },
+  "lure": { "id": "simplestationsrancher:lure_cow" },
   "speed": 1,
   "rolls": [
     {

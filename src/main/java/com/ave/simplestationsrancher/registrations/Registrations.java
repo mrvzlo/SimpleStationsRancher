@@ -54,6 +54,7 @@ public class Registrations {
         public static final DeferredItem<Item> RABBIT_LURE = MANAGER.registerItem("lure_rabbit");
         public static final DeferredItem<Item> SPIDER_LURE = MANAGER.registerItem("lure_spider");
         public static final DeferredItem<Item> BEE_LURE = MANAGER.registerItem("lure_bee");
+        public static final DeferredItem<Item> MILK = MANAGER.registerItem("milk");
 
         public static final DeferredHolder<MenuType<?>, MenuType<BarnMenu>> BARN_MENU = MANAGER
                         .registerMenuType("barn_menu", BarnMenu::new);

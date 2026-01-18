@@ -25,9 +25,4 @@ public class BigBarnEntity extends BaseRancherBlockEntity {
     public SoundEvent getWorkSound() {
         return SoundEvents.COW_AMBIENT;
     }
-
-    @Override
-    protected int getTypeBySeed(Item item) {
-        return -1;
-    }
 }

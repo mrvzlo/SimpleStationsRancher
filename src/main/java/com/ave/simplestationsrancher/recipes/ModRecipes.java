@@ -15,9 +15,9 @@ public class ModRecipes {
     public static final DeferredRegister<RecipeType<?>> TYPES = DeferredRegister.create(Registries.RECIPE_TYPE,
             SimpleStationsRancher.MODID);
 
-    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<RancherRecipe>> SIFTER_SERIALIZER = SERIALIZERS
+    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<RancherRecipe>> SERIALIZER = SERIALIZERS
             .register("rancher", RancherSerializer::new);
-    public static final DeferredHolder<RecipeType<?>, RecipeType<RancherRecipe>> SIFTER_TYPE = TYPES
+    public static final DeferredHolder<RecipeType<?>, RecipeType<RancherRecipe>> TYPE = TYPES
             .register("rancher", () -> new RecipeType<RancherRecipe>() {
                 @Override
                 public String toString() {
